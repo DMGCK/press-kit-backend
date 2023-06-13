@@ -1,8 +1,9 @@
-const dotenv = require("dotenv").config();
-const { google } = require("googleapis");
+import dotenv from "dotenv";
+import { google } from "googleapis";
 const sheets = google.sheets("v4");
-const { JWT } = require("google-auth-library");
-const fs = require("fs");
+import { JWT } from "google-auth-library";
+import fs from "fs";
+dotenv.config();
 const env = process.env;
 
 class GoogleService {
@@ -67,4 +68,4 @@ class GoogleService {
   }
 }
 const googleService = new GoogleService();
-module.exports = googleService;
+export default googleService;
